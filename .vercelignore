@@ -1,0 +1,11 @@
+.venv
+.github
+docs
+frontend/node_modules
+frontend/dist
+backend/tests
+**/__pycache__
+.pytest_cache
+.ruff_cache
+Dockerfile
+docker-compose.yml
