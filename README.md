@@ -5,7 +5,7 @@ A web app for a UK utility's day-ahead power buying team. For every delivery day
 accurate those forecasts have been**, turning the error into a safety margin the team can
 plan with.
 
-- **Live app:** _VERCEL_URL_
+- **Live app:** https://gridbrick-project.vercel.app/
 - **Video walkthrough:** _YOUTUBE_URL_
 - Scope (from the brief): national GB wind, Elexon data only, purchase decisions made in January 2026.
 
