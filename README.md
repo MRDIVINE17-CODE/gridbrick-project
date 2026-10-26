@@ -6,7 +6,7 @@ accurate those forecasts have been**, turning the error into a safety margin the
 plan with.
 
 - **Live app:** https://gridbrick-project.vercel.app/
-- **Video walkthrough:** _YOUTUBE_URL_
+- **Video walkthrough:** https://youtu.be/43YX9u_JCgo (unlisted, about 9 minutes: client overview, then technical review)
 - Scope (from the brief): national GB wind, Elexon data only, purchase decisions made in January 2026.
 
 ---
