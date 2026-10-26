@@ -98,7 +98,7 @@ The app reads a snapshot in `backend/data/wind_jan2026.json`. To rebuild it from
 │   └── src/views/             Desk, Accuracy, Horizon, Method pages
 ├── Dockerfile                 Multi-stage: Node builds the frontend, Python serves everything
 ├── docker-compose.yml         One service on port 8000
-├── vercel.json                Vercel build (static frontend) + Python function for /api
+├── vercel.json                Vercel services: FastAPI backend on /api/*, Vite frontend for the rest
 ├── .github/workflows/ci.yml   Lint, tests, frontend build, Docker build + smoke test
 ├── requirements.txt           Runtime Python dependencies
 ├── requirements-dev.txt       + pytest, ruff
@@ -175,8 +175,12 @@ I set the scope and the design decisions (which forecast counts at gate closure,
 scored, the leave-one-day-out margin test), reviewed the code, and checked the numbers against the
 raw Elexon data.
 
+The walkthrough video was made with AI help as well. The narration is an AI voice generated from a
+recording of my own voice (Coqui XTTS v2, run locally), and the screen recording of the live app and
+the code was captured by an automated browser script. The numbers spoken in it come from the app.
+
 ## Deployment
 
-Vercel builds the frontend (`frontend/dist`, served from the CDN) and deploys `api/index.py` as a
-Python function; `vercel.json` rewrites `/api/*` to it. The same repository also runs anywhere
-Docker runs.
+`vercel.json` deploys the repository as two Vercel services: `backend` (the FastAPI app, entry point
+`api/index.py`) receives every `/api/*` request, and `frontend` (the Vite build, served from the CDN)
+receives everything else. The same repository also runs anywhere Docker runs.
